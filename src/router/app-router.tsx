@@ -1,19 +1,24 @@
 import { RouteObject, createBrowserRouter } from 'react-router-dom'
 
+import { AboutModule } from '@/features/About'
 import AppLayout from '@/features/AppLayout'
+import { HomeModule } from '@/features/Home'
+import { GeneralErrorBoundary } from '@/features/error-boundary'
 
 const routes: RouteObject[] = [
     {
         path: '/',
         element: <AppLayout />,
+        errorElement: <GeneralErrorBoundary />,
         children: [
             {
                 index: true,
-                element: <div>Home</div>,
+                element: <HomeModule />,
             },
             {
                 path: '/about',
-                element: <div>About</div>,
+                element: <AboutModule />,
+                errorElement: <GeneralErrorBoundary />,
             },
         ],
     },

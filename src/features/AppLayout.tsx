@@ -1,9 +1,8 @@
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 
+import NavMenu from '@/features/nav-menu'
 import { ThemeProvider } from '@/shared/ui/theme-provider'
-
-import NavMenu from './NavMenu'
 
 const AppLayout = () => {
     return (
